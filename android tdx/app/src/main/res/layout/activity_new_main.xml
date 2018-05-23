@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="@drawable/bg"
+        android:layout_above="@+id/llTabMenu"
+        android:layout_below="@+id/rlTitle"
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <RelativeLayout
+        android:background="@color/color_bg_title"
+
+        android:id="@+id/rlTitle"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="48dip">
+
+        <TextView
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textColor="#3574B6"
+            android:text="@string/setup"
+            android:gravity="center"
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <ImageButton
+            android:id="@+id/ibTitleBackMainActivity"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/ic_title_back"
+            android:scaleType="fitStart"
+            android:paddingLeft="8dip"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/llTabMenu"
+        android:background="@color/color_bg_tab"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="64dip">
+        <ImageButton
+            android:id="@+id/ibTabHome"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/ic_tab_home"
+            android:scaleType="fitCenter"
+            android:padding="4dip"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+        <ImageButton
+            android:id="@+id/ibTabAccount"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/ic_tab_taikhoan"
+            android:layout_width="0dp"
+            android:scaleType="fitCenter"
+            android:padding="4dip"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+        <ImageButton
+            android:id="@+id/ibTabExit"
+            android:background="?android:selectableItemBackground"
+            android:src="@drawable/ic_tab_info"
+            android:scaleType="fitCenter"
+            android:padding="4dip"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</RelativeLayout>

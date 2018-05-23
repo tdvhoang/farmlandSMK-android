@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+
+                android:id="@+id/ibCMD1FragmentSetUp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_cmd1_off"
+                android:maxWidth="125dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+
+                android:id="@+id/ibCMD2FragmentSetUp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_cmd2_off"
+                android:maxWidth="125dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:gravity="center"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+
+                android:id="@+id/ibCMD3FragmentSetUp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_cmd3_off"
+                android:maxWidth="125dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+
+                android:id="@+id/ibCMD4FragmentSetUp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_cmd4_off"
+                android:maxWidth="125dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_weight="0.5"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp">
+
+        <ImageView
+            android:id="@+id/ivStatusConnect"
+            android:scaleType="centerInside"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxWidth="125dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_disconnect"/>
+
+    </LinearLayout>
+
+</LinearLayout>

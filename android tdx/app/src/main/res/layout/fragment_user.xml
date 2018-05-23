@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_margin="10dip"
+              android:orientation="vertical"
+              android:background="@android:color/white"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <TextView
+        android:clickable="true"
+        android:id="@+id/tvChangeNameDeviceFragmentUser"
+        android:text="Đổi tên thiết bị"
+        android:textColor="@android:color/black"
+        android:padding="15dip"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:background="@drawable/bg_devider_userinfo"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"/>
+    <TextView
+        android:id="@+id/tvPassFragmentUser"
+        android:text="Đổi mật khẩu"
+        android:textColor="@android:color/black"
+        android:padding="15dip"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:background="@drawable/bg_devider_userinfo"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"/>
+    <TextView
+        android:id="@+id/tvChangeDevFragmentUser"
+        android:text="Đổi thiết bị"
+        android:textColor="@android:color/black"
+        android:padding="15dip"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <View
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="10dip"/>
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/etUser"
+        android:gravity="center"
+        android:hint="Tên đăng nhập"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/etPin"
+        android:inputType="number"
+        android:gravity="center"
+        android:maxLength="4"
+        android:hint="Mật khẩu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+</LinearLayout>

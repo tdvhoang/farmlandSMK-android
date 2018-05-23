@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BLE TDX</string>
+    <string name="dialog_action_ok">Ok</string>
+    <string name="dialog_error_title">Error</string>
+    <string name="alert_device_title">Devices</string>
+    <string name="menu_scan">Scan</string>
+    <string name="menu_stop">Stop</string>
+    <string name="menu_addDevice">Add Device</string>
+    <string name="menu_reconnect">Kết nối</string>
+    <string name="menu_disconnect">Mất kết nối</string>
+    <string name="menu_setting">Cài đặt</string>
+    <string name="device">Thiết bị</string>
+    <string name="setting_name">IKY MAIN</string>
+    <string name="fingbike">Tìm xe</string>
+    <string name="setup">Thiết lập</string>
+    <string name="listdevice">Danh sách thiết bị</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="status_lock_on">Bảo vệ bật</string>
+    <string name="status_lock_off">Bảo vệ tắt</string>
+    <string name="status_vibrate_on">Chế độ rung bật</string>
+    <string name="status_vibrate_off">Chế độ rung tắt</string>
+    <string name="textsearch">Tìm kiếm</string>
+    <string name="stop">Dừng</string>
+    <string name="change_user">Đổi tên chủ xe</string>
+    <string name="change_model">Đổi loại xe</string>
+    <string name="change_number_bike">Đổi biển số</string>
+    <string name="cannot_connect_to_device">Mất kết nối tới thiết bị</string>
+
+</resources>

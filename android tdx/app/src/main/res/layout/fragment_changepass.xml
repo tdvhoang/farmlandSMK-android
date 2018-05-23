@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_margin="10dip"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Mật khẩu cũ"
+                android:textColor="@android:color/black"
+                android:padding="15dip"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/etOldPassChangeFragment"
+                android:gravity="right"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:textColor="#3574B6"
+                android:padding="15dip"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <View
+            android:background="@drawable/bg_devider_userinfo"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Mật khẩu "
+                android:textColor="@android:color/black"
+                android:padding="15dip"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/etNewPassChangeFragment"
+                android:gravity="right"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:textColor="#3574B6"
+                android:padding="15dip"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <View
+            android:background="@drawable/bg_devider_userinfo"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Nhập lại mật khẩu"
+                android:textColor="@android:color/black"
+                android:padding="15dip"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <EditText
+
+                android:id="@+id/etNew2PassChangeFragment"
+                android:gravity="right"
+                android:textColor="#3574B6"
+                android:padding="15dip"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/ibSaveFragmentChangePass"
+        android:layout_marginTop="4dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:scaleType="fitStart"
+        android:background="?android:selectableItemBackground"
+        android:src="@drawable/ic_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
