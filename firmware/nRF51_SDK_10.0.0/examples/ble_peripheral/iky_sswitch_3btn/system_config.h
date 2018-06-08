@@ -18,7 +18,7 @@
 
 #define DEVICE_PASSWORD_LENGTH		4
 #define DEVICE_NAME_LENGTH				20
-
+#define DEVICE_PIN_SMK_LENGTH			9 //haidv#08/06/2048
 
 #define MCU_RESET_NONE						0
 #define MCU_RESET_IMMEDIATELY 		1
@@ -44,6 +44,8 @@ typedef struct __attribute__((packed)){
 	uint32_t size;
 	uint8_t Password[DEVICE_PASSWORD_LENGTH];
 	uint8_t DeviceName[DEVICE_NAME_LENGTH];
+	uint8_t smartkey_pin_code[DEVICE_PIN_SMK_LENGTH]; //haidv#08/06/2048
+	uint8_t dummy[3]; //haidv#08/06/2048
 	uint32_t crc;
 }system_config_t;
 

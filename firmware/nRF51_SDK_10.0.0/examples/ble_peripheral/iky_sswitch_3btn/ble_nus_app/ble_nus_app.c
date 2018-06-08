@@ -203,6 +203,7 @@ uint8_t BLE_NUS_ProcessData(BLE_NUS_PACKET_TYPE *IKYBLEProtoRecv,BLE_NUS_PACKET_
 	uint8_t PINisOK = 0;
 	uint8_t u8Tmp1[16];
 	uint8_t u8Tmp2[16];
+	uint8_t *u8pt;
 
 	//verify PIN
 	if(IKYBLEProtoRecv->length >= DEVICE_PASSWORD_LENGTH)
@@ -336,6 +337,7 @@ uint8_t BLE_NUS_ProcessData(BLE_NUS_PACKET_TYPE *IKYBLEProtoRecv,BLE_NUS_PACKET_
 			break;
 		
 			
+			
 		case PACKET_OPCODE_FWVER:						
 			ResponseFlag = 0;
 			//response
@@ -345,6 +347,45 @@ uint8_t BLE_NUS_ProcessData(BLE_NUS_PACKET_TYPE *IKYBLEProtoRecv,BLE_NUS_PACKET_
 			memcpy(IKYBLEProtoSend->dataPt,FIRMWARE_VERSION,IKYBLEProtoSend->length);			
 			IKYBLEProtoSend->crc = BLE_CalcCheckSum(IKYBLEProtoSend->dataPt,IKYBLEProtoSend->length);	
 			break;	
+		
+		case PACKET_OPCODE_READ_SMARTKEY: //haidv#08/06/2048
+			if(!PINisOK)
+			{
+				ResponseCode = RESPONSE_CODE_INCORRECT_PIN;				
+			}			
+			else
+			{
+				ResponseFlag = 0;
+				//response
+				memcpy(IKYBLEProtoSend->dataPt,sysCfg.Password,DEVICE_PASSWORD_LENGTH);
+				//PIN Smartkey
+				memcpy(&IKYBLEProtoSend->dataPt[DEVICE_PASSWORD_LENGTH],sysCfg.smartkey_pin_code,DEVICE_PIN_SMK_LENGTH);			
+				//Calc CRC
+				u32Temp = BLE_CalcPINBlock(IKYBLEProtoSend->dataPt,DEVICE_PASSWORD_LENGTH + DEVICE_PIN_SMK_LENGTH);
+				//
+				u8pt =  (uint8_t*)&u32Temp;
+				IKYBLEProtoSend->dataPt[0] = u8pt[0];
+				IKYBLEProtoSend->dataPt[1] = u8pt[1];
+				IKYBLEProtoSend->dataPt[2] = u8pt[2];
+				IKYBLEProtoSend->dataPt[3] = u8pt[3];			
+				//
+				IKYBLEProtoSend->start = 0xCA;
+				IKYBLEProtoSend->opcode = IKYBLEProtoRecv->opcode;
+				IKYBLEProtoSend->length = ENCRYPT_BLOCK_PIN_LENGTH + DEVICE_PIN_SMK_LENGTH;			
+				IKYBLEProtoSend->crc = BLE_CalcCheckSum(IKYBLEProtoSend->dataPt,IKYBLEProtoSend->length);
+			}
+			break;
+			
+		case PACKET_OPCODE_WRITE_SMARTKEY: //haidv#08/06/2048
+			if(!PINisOK){
+				ResponseCode = RESPONSE_CODE_INCORRECT_PIN;				
+			}else{		
+//				if(io_bell.enable != IO_TOGGLE_ENABLE)IO_ToggleSetStatus(&io_bell,100,100,IO_TOGGLE_ENABLE,1);				
+				memcpy(sysCfg.smartkey_pin_code,&IKYBLEProtoRecv->dataPt[4],IKYBLEProtoRecv->length - 4);
+			}
+			break;
+			
+			
 		
 		default:
 			IO_ToggleSetStatus(&io_buzzer,50,100,IO_TOGGLE_ENABLE,1);

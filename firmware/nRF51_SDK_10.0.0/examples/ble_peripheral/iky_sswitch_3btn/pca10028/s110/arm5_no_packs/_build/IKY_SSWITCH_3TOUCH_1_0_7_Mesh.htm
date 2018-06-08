@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\_build\IKY_SSWITCH_3TOUCH_1_0_7_Mesh.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\_build\IKY_SSWITCH_3TOUCH_1_0_7_Mesh.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Wed May 23 11:39:58 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Fri Jun 08 10:44:44 2018
 <BR><P>
-<H3>Maximum Stack Usage =        512 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        520 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-main &rArr; BLE_NUS_Task &rArr; BLE_NUS_PutReport &rArr; BLE_CalcPINBlock &rArr; HashMD5 &rArr; md5_finish &rArr; md5_append &rArr; md5_process
+nus_data_handler &rArr; BLE_NUS_Rx_Callback &rArr; BLE_NUS_ProcessData &rArr; BLE_CalcPINBlock &rArr; HashMD5 &rArr; md5_finish &rArr; md5_append &rArr; md5_process
 <P>
 <H3>
 Mutually Recursive functions
@@ -395,8 +395,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BLE_NUS_Rx_Callback
 </UL>
 
-<P><STRONG><a name="[54]"></a>BLE_NUS_ProcessData</STRONG> (Thumb, 568 bytes, Stack size 56 bytes, ble_nus_app.o(i.BLE_NUS_ProcessData))
-<BR><BR>[Stack]<UL><LI>Max Depth = 464<LI>Call Chain = BLE_NUS_ProcessData &rArr; BLE_CalcPINBlock &rArr; HashMD5 &rArr; md5_finish &rArr; md5_append &rArr; md5_process
+<P><STRONG><a name="[54]"></a>BLE_NUS_ProcessData</STRONG> (Thumb, 738 bytes, Stack size 80 bytes, ble_nus_app.o(i.BLE_NUS_ProcessData))
+<BR><BR>[Stack]<UL><LI>Max Depth = 488<LI>Call Chain = BLE_NUS_ProcessData &rArr; BLE_CalcPINBlock &rArr; HashMD5 &rArr; md5_finish &rArr; md5_append &rArr; md5_process
 </UL>
 <BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ResetMcuSet
@@ -432,7 +432,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[5b]"></a>BLE_NUS_Rx_Callback</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, ble_nus_app.o(i.BLE_NUS_Rx_Callback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 472<LI>Call Chain = BLE_NUS_Rx_Callback &rArr; BLE_NUS_ProcessData &rArr; BLE_CalcPINBlock &rArr; HashMD5 &rArr; md5_finish &rArr; md5_append &rArr; md5_process
+<BR><BR>[Stack]<UL><LI>Max Depth = 496<LI>Call Chain = BLE_NUS_Rx_Callback &rArr; BLE_NUS_ProcessData &rArr; BLE_CalcPINBlock &rArr; HashMD5 &rArr; md5_finish &rArr; md5_append &rArr; md5_process
 </UL>
 <BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BLE_NUS_ProcessData
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BLE_NUS_ParserPacket
@@ -1706,7 +1706,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[2b]"></a>nus_data_handler</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, main.o(i.nus_data_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 496<LI>Call Chain = nus_data_handler &rArr; BLE_NUS_Rx_Callback &rArr; BLE_NUS_ProcessData &rArr; BLE_CalcPINBlock &rArr; HashMD5 &rArr; md5_finish &rArr; md5_append &rArr; md5_process
+<BR><BR>[Stack]<UL><LI>Max Depth = 520<LI>Call Chain = nus_data_handler &rArr; BLE_NUS_Rx_Callback &rArr; BLE_NUS_ProcessData &rArr; BLE_CalcPINBlock &rArr; HashMD5 &rArr; md5_finish &rArr; md5_append &rArr; md5_process
 </UL>
 <BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IO_ToggleSetStatus
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BLE_NUS_Rx_Callback
