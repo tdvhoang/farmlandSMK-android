@@ -45,7 +45,8 @@ typedef struct __attribute__((packed)){
 	uint8_t Password[DEVICE_PASSWORD_LENGTH];
 	uint8_t DeviceName[DEVICE_NAME_LENGTH];
 	uint8_t smartkey_pin_code[DEVICE_PIN_SMK_LENGTH]; //haidv#08/06/2048
-	uint8_t dummy[3]; //haidv#08/06/2048
+	uint8_t time; //haidv#08/06/2048
+	uint8_t dummy[2]; //haidv#08/06/2048
 	uint32_t crc;
 }system_config_t;
 

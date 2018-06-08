@@ -121,6 +121,12 @@ void CFG_Load(void)
 		saveFlag = 1;
 	}
 	
+	if(sysCfg.time < 10 || sysCfg.time > 99)
+	{
+		sysCfg.time = 10;
+		saveFlag = 1;
+	}
+	
 	if(saveFlag)
 	{
 		NRF_LOG_PRINTF("CFG_Load> saveFlag\r\n");
