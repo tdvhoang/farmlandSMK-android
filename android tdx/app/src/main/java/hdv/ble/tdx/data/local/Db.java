@@ -19,7 +19,7 @@ public class Db {
         public static final String COLUMN_ADDRESS = "address";
         public static final String COLUMN_USER = "user";
         public static final String COLUMN_MODELBIKE = "modelbike";
-        public static final String COLUMN_NUMBERBIKE = "numberbike";
+        public static final String COLUMN_TIME_SMK = "timesmk";
         public static final String COLUMN_PIN_SMARTKEY = "pinsmartkey";
 
         public static final String CREATE =
@@ -29,7 +29,7 @@ public class Db {
                         COLUMN_PIN + " TEXT NOT NULL," +
                         COLUMN_USER + " TEXT NOT NULL," +
                         COLUMN_MODELBIKE + " TEXT NOT NULL," +
-                        COLUMN_NUMBERBIKE + " TEXT NOT NULL," +
+                        COLUMN_TIME_SMK + " TEXT NOT NULL," +
                         COLUMN_ADDRESS + " TEXT NOT NULL," +
                         COLUMN_PIN_SMARTKEY + " TEXT NOT NULL" +
                         " );";
@@ -42,7 +42,7 @@ public class Db {
             values.put(COLUMN_ADDRESS, ikyDevice.getAddress());
             values.put(COLUMN_USER, ikyDevice.getUsername());
             values.put(COLUMN_MODELBIKE, ikyDevice.getModelBike());
-            values.put(COLUMN_NUMBERBIKE, ikyDevice.getNumberBike());
+            values.put(COLUMN_TIME_SMK, ikyDevice.getTimeSMK());
             values.put(COLUMN_PIN_SMARTKEY, ikyDevice.getPINSmartkey());
             return values;
         }
@@ -55,7 +55,7 @@ public class Db {
             ikyDevice.setPin(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PIN)));
             ikyDevice.setUsername(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_USER)));
             ikyDevice.setModelBike(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_MODELBIKE)));
-            ikyDevice.setNumberBike(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NUMBERBIKE)));
+            ikyDevice.setTimeSMK(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TIME_SMK)));
             ikyDevice.setPINSmartkey(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PIN_SMARTKEY)));
             return ikyDevice;
         }

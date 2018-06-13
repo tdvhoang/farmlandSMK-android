@@ -195,6 +195,14 @@ public class MainPresenter extends BasePresenter<MainMvpView> {
         mBluetoothLeService.writeRXCharacteristic(Protocol.rename(mIkyDevice.getPin(), newName));
     }
 
+    public void changePINSMK(String newPIN, String newTime){
+        mBluetoothLeService.writeRXCharacteristic(Protocol.changePINSMK(mIkyDevice.getPin(), newPIN, newTime));
+    }
+
+    public void getPINSMK(){
+        mBluetoothLeService.writeRXCharacteristic(Protocol.readPINSMK(mIkyDevice.getPin()));
+    }
+
     public void changePin(String newPin){
         mBluetoothLeService.writeRXCharacteristic(Protocol.changePin(mIkyDevice.getPin(), newPin));
     }
@@ -305,8 +313,42 @@ public class MainPresenter extends BasePresenter<MainMvpView> {
                 eventPosterHelper.postEventSafely(new BusEvent.EventVersion(sVersion));
 
             }
+        }else if(bytes[1] == Protocol.OPCODE_READ_SMARTKEY){
 
+            //0xCA 0x8F 0x05 0x31 0x2E 0x30 0x2E 0x38 0xF5
+            if(bytes.length > 17 ){
+                byte[] bPINSMK = new byte[bytes.length - 6];
+                byte[] bTIME = new byte[2];
+                for (int i = 7; i < bytes.length - 3; i++) {
+                    bPINSMK[i-7] = bytes[i];
+
+                }
+                bTIME[0] = bytes[bytes.length - 3];
+                bTIME[1] = bytes[bytes.length - 2];
+
+                String sPINSMK = new String(bPINSMK);
+                String sTIME = new String(bTIME);
+                eventPosterHelper.postEventSafely(new BusEvent.GetPinSmartkey(sPINSMK, sTIME));
+
+            }
+        }else if(bytes[1] == Protocol.OPCODE_WRITE_SMARTKEY){
+
+            //0xCA 0x8F 0x05 0x31 0x2E 0x30 0x2E 0x38 0xF5
+            BusEvent.UpdatePinSmartkey updatePin = new BusEvent.UpdatePinSmartkey(false);
+            try {
+                byte statusCode = bytes[3];
+                if (statusCode == Protocol.STATUS_CODE_SUCCESS) {
+                    updatePin.isSuccess = true;
+                } else {
+                    updatePin.isSuccess = false;
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+                updatePin.isSuccess = false;
+            }
+            eventPosterHelper.postEventSafely(updatePin);
         }
+
 
 
         if(isViewAttached()){

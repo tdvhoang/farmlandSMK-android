@@ -13,7 +13,7 @@ public class IkyDevice implements Parcelable{
     String uuid;
     String username;
     String modelBike;
-    String numberBike;
+    String TimeSMK;
     String pinSmartkey;
 
     public String getName() {
@@ -64,12 +64,12 @@ public class IkyDevice implements Parcelable{
         this.modelBike = modelBike;
     }
 
-    public String getNumberBike() {
-        return numberBike;
+    public String getTimeSMK() {
+        return TimeSMK;
     }
 
-    public void setNumberBike(String numberBike) {
-        this.numberBike = numberBike;
+    public void setTimeSMK(String sTimeSMK) {
+        this.TimeSMK = sTimeSMK;
     }
 
     public String getPINSmartkey() {return pinSmartkey;}
@@ -82,12 +82,12 @@ public class IkyDevice implements Parcelable{
     public IkyDevice(){
         this.username = "Chưa xác định";
         this.modelBike = "Chưa xác định";
-        this.numberBike = "Chưa xác định";
+        this.TimeSMK = "20";
         this.pinSmartkey = "123456789";
     }
 
     public String getInforUser(){
-        return String.format("%s\n%s\n%s",username,modelBike,numberBike);
+        return String.format("%s\n%s\n",username,modelBike);
     }
 
     protected IkyDevice(Parcel in) {
@@ -97,7 +97,7 @@ public class IkyDevice implements Parcelable{
         uuid = in.readString();
         username = in.readString();
         modelBike = in.readString();
-        numberBike = in.readString();
+        TimeSMK = in.readString();
         pinSmartkey = in.readString();
     }
 
@@ -126,7 +126,7 @@ public class IkyDevice implements Parcelable{
         dest.writeString(uuid);
         dest.writeString(username);
         dest.writeString(modelBike);
-        dest.writeString(numberBike);
+        dest.writeString(TimeSMK);
         dest.writeString(pinSmartkey);
     }
 }

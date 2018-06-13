@@ -66,10 +66,15 @@ public class BusEvent {
 
     }
 
-    public static class UpdatePinSmartkey{
+    public static class GetPinSmartkey{
 
-        public boolean isSuccess;
+        public String sPINSMK;
+        public String sTime;
 
+        public GetPinSmartkey(String _sPINSMK, String _sTime ) {
+            this.sPINSMK = _sPINSMK;
+            this.sTime = _sTime;
+        }
     }
 
     public static class StartEmergency{
@@ -78,10 +83,11 @@ public class BusEvent {
         public byte status;
     }
 
-    public static class GetPinSmartkey{
+    public static class UpdatePinSmartkey{
 
         public boolean isSuccess;
-        public String pin;
-
+        public UpdatePinSmartkey(boolean _isSuccess) {
+            this.isSuccess = _isSuccess;
+        }
     }
 }

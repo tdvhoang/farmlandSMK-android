@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BLE TDX</string>
+    <string name="app_name">Farmland SMK</string>
     <string name="dialog_action_ok">Ok</string>
     <string name="dialog_error_title">Error</string>
     <string name="alert_device_title">Devices</string>
@@ -25,5 +25,7 @@
     <string name="change_model">Đổi loại xe</string>
     <string name="change_number_bike">Đổi biển số</string>
     <string name="cannot_connect_to_device">Mất kết nối tới thiết bị</string>
+    <string name="pin_smk_default">123456789</string>
+    <string name="time_smk_default">10</string>
 
 </resources>

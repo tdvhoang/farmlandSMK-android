@@ -4,6 +4,7 @@ import dagger.Component;
 import hdv.ble.tdx.injection.PerActivity;
 import hdv.ble.tdx.injection.module.ActivityModule;
 import hdv.ble.tdx.ui.ChangeNameFragment;
+import hdv.ble.tdx.ui.ChangePINSMKFragment;
 import hdv.ble.tdx.ui.ChangePassFragment;
 import hdv.ble.tdx.ui.InforFragment;
 import hdv.ble.tdx.ui.SplashActivity;
@@ -38,5 +39,6 @@ public interface ActivityComponent {
 
     void inject(InforFragment inforFragment);
 
+    void inject(ChangePINSMKFragment changePINSMKFragment);
 }
 

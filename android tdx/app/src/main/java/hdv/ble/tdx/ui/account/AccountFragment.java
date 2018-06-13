@@ -19,6 +19,7 @@ import hdv.ble.tdx.R;
 import hdv.ble.tdx.data.DataManager;
 import hdv.ble.tdx.data.model.IkyDevice;
 import hdv.ble.tdx.ui.ChangeNameFragment;
+import hdv.ble.tdx.ui.ChangePINSMKFragment;
 import hdv.ble.tdx.ui.ChangePassFragment;
 import hdv.ble.tdx.ui.SplashActivity;
 import hdv.ble.tdx.ui.UserFragment;
@@ -38,6 +39,8 @@ public class AccountFragment extends Fragment implements AccountMvpView {
     @Bind(R.id.tvPassFragmentUser)
     TextView tvPassFragmentUser;
 
+    @Bind(R.id.tvPINSMKFragmentUser)
+    TextView tvPINSMKFragmentUser;
 
     @Inject
     AccountPresenter statusPresenter;
@@ -153,6 +156,16 @@ public class AccountFragment extends Fragment implements AccountMvpView {
                     }
 
                 });
+    }
+
+    @OnClick(R.id.tvPINSMKFragmentUser)
+    void OnClickChangePINSMK(){
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        fm.beginTransaction()
+                .replace(R.id.fragment, new ChangePINSMKFragment())
+                .addToBackStack(null)
+                .commit();
+
     }
 
 }

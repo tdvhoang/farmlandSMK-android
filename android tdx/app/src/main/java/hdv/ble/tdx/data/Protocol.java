@@ -24,6 +24,8 @@ public class Protocol {
     public static byte OPCODE_PIN = (byte) 0x07;
     public static byte OPCODE_NAME = (byte) 0x08;
     public static byte OPCODE_STATUS = (byte) 0x09;
+    public static byte OPCODE_READ_SMARTKEY = (byte) 0x0A;
+    public static byte OPCODE_WRITE_SMARTKEY = (byte) 0x0B;
 
     public static byte STATUS_CODE_SUCCESS = (byte) 0x0;
     public static byte STATUS_CODE_BUSY = (byte) 0x44;
@@ -118,6 +120,17 @@ public class Protocol {
     public static byte[] rename(String pin, String newName)
     {
         return generateCmd(OPCODE_NAME,pin,newName.getBytes());
+    }
+
+    public static byte[] changePINSMK(String pin, String pinsmk, String time)
+    {
+        String sData = pinsmk + time;
+        return generateCmd(OPCODE_WRITE_SMARTKEY,pin,sData.getBytes());
+    }
+
+    public static byte[] readPINSMK(String pin)
+    {
+        return generateCmd(OPCODE_READ_SMARTKEY,pin,new byte[]{1});
     }
 
     public static byte[] changePin(String pin, String newPin)

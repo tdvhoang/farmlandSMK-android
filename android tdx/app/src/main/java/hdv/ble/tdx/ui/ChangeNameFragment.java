@@ -57,6 +57,7 @@ public class ChangeNameFragment extends Fragment {
         ButterKnife.bind(this, fragmentView);
         ((MainActivity)getActivity()).showTabMenu(false);
         ((MainActivity)getActivity()).setTextTitle("Đổi tên thiết bị");
+
         bus.register(this);
 
         dataManager.findIkyDevices()
@@ -64,7 +65,7 @@ public class ChangeNameFragment extends Fragment {
                 .subscribe(new Subscriber<IkyDevice>() {
                     @Override
                     public void onCompleted() {
-
+                        etNewNameChangeFragment.setHint(mIkyDevice.getName());
                     }
 
                     @Override
