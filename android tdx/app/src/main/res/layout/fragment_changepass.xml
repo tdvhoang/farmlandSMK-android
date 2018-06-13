@@ -93,6 +93,7 @@
 
 
     <ImageButton
+        android:layout_gravity="center"
         android:id="@+id/ibSaveFragmentChangePass"
         android:layout_marginTop="4dip"
         android:layout_marginRight="10dip"
@@ -100,7 +101,7 @@
         android:scaleType="fitStart"
         android:background="?android:selectableItemBackground"
         android:src="@drawable/ic_save"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
 </LinearLayout>
