@@ -1,2 +1,1 @@
-# android-tdx
-	+ BLE receive callback: MainPresenter
+# http://farmlandsmartkey.com/
